@@ -1,0 +1,167 @@
+{
+	"info": {
+		"_postman_id": "1e5ef990-326f-4b82-8bd3-47baa993878c",
+		"name": "Pastee",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28254574"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"let date = Date.now();\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": "uev5Q9xCdx7BWbUlMIwMOJ3708BmYjs1jH0OTnvHl",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"encrypted\": false,\r\n    \"description\": \"test\",\r\n    \"sections\": [\r\n        {\r\n            \"name\": \"Section1\",\r\n            \"syntax\": \"autodetect\",\r\n            \"contents\": \"Testing!\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.paste.ee/v1/pastes",
+					"protocol": "https",
+					"host": [
+						"api",
+						"paste",
+						"ee"
+					],
+					"path": [
+						"v1",
+						"pastes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": "uev5Q9xCdx7BWbUlMIwMOJ3708BmYjs1jH0OTnvHl",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.paste.ee/v1/pastes/{{user_ID}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"paste",
+						"ee"
+					],
+					"path": [
+						"v1",
+						"pastes",
+						"{{user_ID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"id\", \"xxUfT\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": "uev5Q9xCdx7BWbUlMIwMOJ3708BmYjs1jH0OTnvHl",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.paste.ee/v1/pastes/{{user_ID}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"paste",
+						"ee"
+					],
+					"path": [
+						"v1",
+						"pastes",
+						"{{user_ID}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "uev5Q9xCdx7BWbUlMIwMOJ3708BmYjs1jH0OTnvHl",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
